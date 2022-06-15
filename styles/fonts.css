@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Avenir'), local('Avenir'), url(../public/fonts/avenir-200.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Avenir'), local('Avenir'), url(../public/fonts/avenir-300.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Avenir'), local('Avenir'), url(../public/fonts/avenir-400.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Avenir'), local('Avenir'), url(../public/fonts/avenir-600.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Avenir'), local('Avenir'), url(../public/fonts/avenir-800.ttf) format('ttf');
+}
+
+
