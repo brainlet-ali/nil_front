@@ -1,5 +1,4 @@
 import '../styles/globals.css'
-import '../styles/stackoverflow-light.css'
 import { ThemeProvider } from 'next-themes'
 
 function NewInLaravel({ Component, pageProps }) {

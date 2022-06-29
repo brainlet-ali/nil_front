@@ -5,7 +5,7 @@ import { MoonIcon, SunIcon } from '@heroicons/react/solid'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 
-const Header = () => {
+const Header = ({ onThemeChange }) => {
   const { systemTheme, theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
@@ -17,6 +17,7 @@ const Header = () => {
     if (!mounted) return null
     const currentTheme = theme === 'system' ? systemTheme : theme
 
+    onThemeChange(currentTheme)
     if (currentTheme === 'dark') {
       return (
         <div
@@ -25,7 +26,7 @@ const Header = () => {
             setTheme('light')
           }}
         >
-          <SunIcon className={'w7 h-7'} role={'button'} />
+          <SunIcon className={'h-5 w-5'} role={'button'} />
         </div>
       )
     }
@@ -36,7 +37,7 @@ const Header = () => {
           setTheme('dark')
         }}
       >
-        <MoonIcon className={'w5 h-5'} role={'button'} />
+        <MoonIcon className={'h-5 w-5'} role={'button'} />
       </div>
     )
   }

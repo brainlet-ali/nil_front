@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { PageContainer } from '@/components/PageContainer'
 import Header from '@/components/inc/Header'
 import Highlight from 'react-highlight'
-import Link from 'next/link'
+import { useState } from 'react'
 
 export default function Home() {
   return (
@@ -16,8 +16,13 @@ export default function Home() {
       <div className={'h-full dark:bg-zinc-800'}>
         <PageContainer>
           <div className={'flex flex-col'}>
-            <Header />
+            <Header
+              onThemeChange={(themeName) => {
+                renderThemeChanger(themeName)
+              }}
+            />
             <main>
+              <style jsx>{theme}</style>
               <Highlight className="php my-8 mx-auto max-w-5xl rounded-2xl">
                 {`
       use Illuminate\\Support\\Facades\\File;
