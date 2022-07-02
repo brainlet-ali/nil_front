@@ -15,7 +15,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Versions() {
+export default function VersionSelector() {
   const [selected, setSelected] = useState(versions[0])
 
   return (
@@ -27,6 +27,7 @@ export default function Versions() {
       >
         <span>{selected.name}</span>
       </h2>
+
       <div className={'mx-auto mt-6 w-48'}>
         <Listbox value={selected} onChange={setSelected}>
           {({ open }) => (
