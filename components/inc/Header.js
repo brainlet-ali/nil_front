@@ -18,6 +18,7 @@ const Header = ({ onThemeChange }) => {
     const currentTheme = theme === 'system' ? systemTheme : theme
 
     onThemeChange(currentTheme)
+
     if (currentTheme === 'dark') {
       return (
         <div
