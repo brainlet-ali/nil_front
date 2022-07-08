@@ -2,7 +2,7 @@ import { CheckCircleIcon, DuplicateIcon } from '@heroicons/react/outline'
 import Highlight from 'react-highlight'
 import { useEffect, useState } from 'react'
 
-export default function CodeBlock() {
+export default function CodeBlock({ code }) {
   const [copied, setCopied] = useState(false)
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function CodeBlock() {
         {!copied && (
           <DuplicateIcon
             onClick={() => {
-              navigator.clipboard.writeText('Copy this text to clipboard')
+              navigator.clipboard.writeText(code)
               setCopied(true)
             }}
             role={'button'}
@@ -38,13 +38,7 @@ export default function CodeBlock() {
         )}
         {copied && <CheckCircleIcon className={'h-6 w-6 text-emerald-500'} />}
       </span>
-      <Highlight className="php">{`// Before
-Http::withOptions([
-    'allow_redirects' => ['max' => 10],
-])->get('/endpoint');
-
-// After
-Http::allowMaxRedirects(10)->get('/endpoint');`}</Highlight>
+      <Highlight className="php">{code}</Highlight>
     </div>
   )
 }

@@ -2,10 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+.dark-bg{
+    @apply dark:bg-zinc-800;
+}
+
 html,
 body,
 body > div:first-child,
 div#__next,
 div#__next > div {
     height: 100%;
+
+    @apply dark-bg;
 }
