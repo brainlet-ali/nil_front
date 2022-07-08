@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import { PageContainer } from '@/components/PageContainer'
 import Header from '@/components/inc/Header'
-import CodeBlock from '@/components/inc/CodeBlock'
 import { APP } from '@/lib/constant'
+import Pr from '@/components/PR'
+import PrGrid from '@/components/PrGrid'
 
 export default function Index() {
   return (
@@ -13,11 +14,16 @@ export default function Index() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={'h-full dark:bg-zinc-800'}>
+      <div className={'dark:bg-zinc-800'}>
         <PageContainer>
           <Header />
+
+          <hr className={'my-20'} />
           <main>
-            <CodeBlock />
+            <PrGrid>
+              <Pr />
+              <Pr />
+            </PrGrid>
           </main>
         </PageContainer>
       </div>
