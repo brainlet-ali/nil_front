@@ -17,7 +17,7 @@ export default function Feature({ feature }) {
             className={
               'rounded-lg bg-stone-200 py-1 px-2 font-bold text-blue-900 shadow-2xl hover:text-blue-700 dark:bg-stone-50'
             }
-            href="@/components/pr/Pr"
+            href={feature.pr.link}
             target={'_blank'}
           >
             {feature.pr.number}
