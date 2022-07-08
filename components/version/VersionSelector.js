@@ -1,36 +1,45 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
 import VersionCircle from '@/components/version/VersionCircle'
-
-const versions = [
-  { id: 1, name: '9.14' },
-  { id: 2, name: '9.13' },
-  { id: 3, name: '9.12' },
-  { id: 4, name: '9.11' },
-  { id: 5, name: '9.10' },
-  { id: 6, name: '9.9' },
-]
+import { useRouter } from 'next/router'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function VersionSelector() {
-  const [selected, setSelected] = useState(versions[0])
+export default function VersionSelector({ version }) {
+  const [versions, setVersions] = useState([
+    { id: 1, name: '9.14' },
+    { id: 2, name: '9.13' },
+    { id: 3, name: '9.12' },
+    { id: 4, name: '9.11' },
+    { id: 5, name: '9.10' },
+    { id: 6, name: '9.9' },
+  ])
+
+  const [selectedVersion, setSelectedVersion] = useState(
+    versions.find((v) => v.name === version) || versions[0]
+  )
+
+  const router = useRouter()
+
+  useEffect(() => {
+    router.push(`/version/${selectedVersion.name}`)
+  }, [selectedVersion])
 
   return (
     <>
-      <VersionCircle versionName={selected.name} />
+      <VersionCircle versionName={selectedVersion.name} />
 
       <div className={'mx-auto mt-6 w-48'}>
-        <Listbox value={selected} onChange={setSelected}>
+        <Listbox value={selectedVersion} onChange={setSelectedVersion}>
           {({ open }) => (
             <>
               <div className="relative mt-1 text-left">
                 <Listbox.Button className="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 sm:text-sm">
                   <span className="block truncate text-black">
-                    {selected.name}
+                    {selectedVersion.name}
                   </span>
                   <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                     <SelectorIcon
