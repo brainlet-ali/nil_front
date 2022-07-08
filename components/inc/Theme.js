@@ -159,8 +159,7 @@ const LightTheme = () => {
 }
 
 export default function Theme({ theme }) {
-  console.log('theme', theme)
-  if (theme == 'dark') {
+  if (theme === 'dark') {
     return <DarkTheme />
   }
   return <LightTheme />

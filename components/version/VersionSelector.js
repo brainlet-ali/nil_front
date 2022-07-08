@@ -3,13 +3,19 @@ import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
 import VersionCircle from '@/components/version/VersionCircle'
 import { useRouter } from 'next/router'
+import FeatureAPI from '@/api/FeatureAPI'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function VersionSelector({ version }) {
+export default function VersionSelector({
+  version,
+  onVersionChange,
+  onFeaturesLoaded,
+}) {
   const [versions, setVersions] = useState([
+    { id: 11, name: '9.19' },
     { id: 1, name: '9.14' },
     { id: 2, name: '9.13' },
     { id: 3, name: '9.12' },
@@ -25,6 +31,14 @@ export default function VersionSelector({ version }) {
   const router = useRouter()
 
   useEffect(() => {
+    FeatureAPI.features(selectedVersion.name)
+      .then(({ data }) => {
+        const features = data.data
+        onFeaturesLoaded(features)
+      })
+      .catch((err) => {})
+
+    onVersionChange(selectedVersion.name)
     router.push(`/version/${selectedVersion.name}`)
   }, [selectedVersion])
 

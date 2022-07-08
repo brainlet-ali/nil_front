@@ -1,6 +1,6 @@
 import CodeBlock from '@/components/inc/CodeBlock'
 
-export default function Feature(props) {
+export default function Feature({ feature }) {
   return (
     <div>
       <div
@@ -9,7 +9,7 @@ export default function Feature(props) {
         }
       >
         <h2 className={'text-center text-2xl font-black md:text-left'}>
-          Add new allowMaxRedirects method to PendingRequest
+          {feature.title}
         </h2>
         <span>
           PR&nbsp;&nbsp;
@@ -20,7 +20,7 @@ export default function Feature(props) {
             href="@/components/pr/Pr"
             target={'_blank'}
           >
-            24904
+            {feature.pr.number}
           </a>
         </span>
       </div>
@@ -29,11 +29,9 @@ export default function Feature(props) {
           'my-4 px-4 text-center text-zinc-900 dark:text-zinc-100 sm:px-0 sm:text-left'
         }
       >
-        This PR adds a new allowMaxRedirects() method on the PendingRequest to
-        easily set/change the max redirects value for the allow_redirects
-        option.
+        {feature.description}
       </p>
-      <CodeBlock />
+      <CodeBlock code={feature.body} />
     </div>
   )
 }

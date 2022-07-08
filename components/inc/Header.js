@@ -3,7 +3,7 @@ import SiteHeading from '@/components/inc/SiteHeading'
 import ThemeChanger from '@/components/inc/ThemeChanger'
 import Nav from '@/components/inc/Nav'
 
-const Header = ({ version }) => {
+const Header = ({ version, onVersionChange, onFeaturesLoaded }) => {
   return (
     <>
       <div className={'mx-auto mb-10 w-2/4 sm:w-1/4'}>
@@ -19,7 +19,11 @@ const Header = ({ version }) => {
         <span className={'tracking-widest text-brand'}>LARAVEL</span>
       </SiteHeading>
 
-      <VersionSelector version={version} />
+      <VersionSelector
+        onFeaturesLoaded={onFeaturesLoaded}
+        onVersionChange={onVersionChange}
+        version={version}
+      />
     </>
   )
 }
