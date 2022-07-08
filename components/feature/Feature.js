@@ -1,6 +1,6 @@
 import CodeBlock from '@/components/inc/CodeBlock'
 
-export default function Pr(props) {
+export default function Feature(props) {
   return (
     <div>
       <div
@@ -17,7 +17,7 @@ export default function Pr(props) {
             className={
               'rounded-lg bg-stone-200 py-1 px-2 font-bold text-blue-900 shadow-2xl hover:text-blue-700 dark:bg-stone-50'
             }
-            href=""
+            href="@/components/pr/Pr"
             target={'_blank'}
           >
             24904

@@ -1,11 +1,15 @@
 import Head from 'next/head'
-import { PageContainer } from '@/components/PageContainer'
+import { PageContainer } from '@/components/inc/PageContainer'
 import Header from '@/components/inc/Header'
 import { APP } from '@/lib/constant'
-import Pr from '@/components/PR'
-import PrGrid from '@/components/PrGrid'
+import Feature from '@/components/feature/Feature'
+import FeatureGrid from '@/components/feature/FeatureGrid'
+import { useRouter } from 'next/router'
 
 export default function Index() {
+  const router = useRouter()
+  const { version } = router.query
+
   return (
     <div>
       <Head>
@@ -16,14 +20,14 @@ export default function Index() {
 
       <div className={'dark:bg-zinc-800'}>
         <PageContainer>
-          <Header />
+          <Header version={version} />
 
           <hr className={'my-20'} />
+
           <main>
-            <PrGrid>
-              <Pr />
-              <Pr />
-            </PrGrid>
+            <FeatureGrid>
+              <Feature />
+            </FeatureGrid>
           </main>
         </PageContainer>
       </div>
