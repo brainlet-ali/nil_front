@@ -1,6 +1,7 @@
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
+import VersionCircle from '@/components/version/VersionCircle'
 
 const versions = [
   { id: 1, name: '9.14' },
@@ -20,13 +21,7 @@ export default function VersionSelector() {
 
   return (
     <>
-      <h2
-        className={
-          'mx-auto mt-6 flex w-20 items-center justify-center rounded-full bg-brand py-6 text-center text-center text-2xl font-bold text-stone-50'
-        }
-      >
-        <span>{selected.name}</span>
-      </h2>
+      <VersionCircle versionName={selected.name} />
 
       <div className={'mx-auto mt-6 w-48'}>
         <Listbox value={selected} onChange={setSelected}>

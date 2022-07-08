@@ -18,7 +18,7 @@ export default function ThemeChanger() {
     <>
       <Theme theme={'dark'} />
       <div
-        className={'mx-auto rounded-full bg-gray-900 p-2.5'}
+        className={'rounded-full bg-gray-900 p-2.5'}
         onClick={() => {
           setTheme('light')
         }}
@@ -30,7 +30,7 @@ export default function ThemeChanger() {
     <>
       <Theme theme={'light'} />
       <div
-        className={'mx-auto rounded-full bg-gray-100 p-2.5'}
+        className={'rounded-full bg-gray-100 p-2.5'}
         onClick={() => {
           setTheme('dark')
         }}

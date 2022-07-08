@@ -1,4 +1,4 @@
-import Version from '@/components/version/VersionSelector'
+import VersionSelector from '@/components/version/VersionSelector'
 import SiteHeading from '@/components/inc/SiteHeading'
 import ThemeChanger from '@/components/inc/ThemeChanger'
 import Nav from '@/components/inc/Nav'
@@ -19,7 +19,7 @@ const Header = () => {
         <span className={'tracking-widest text-brand'}>LARAVEL</span>
       </SiteHeading>
 
-      <Version />
+      <VersionSelector />
     </>
   )
 }
