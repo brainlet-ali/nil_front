@@ -1,7 +1,24 @@
-import { DuplicateIcon } from '@heroicons/react/outline'
+import { CheckCircleIcon, DuplicateIcon } from '@heroicons/react/outline'
 import Highlight from 'react-highlight'
+import { useEffect, useState } from 'react'
 
 export default function CodeBlock() {
+  const [copied, setCopied] = useState(false)
+
+  useEffect(() => {
+    if (copied) {
+      setCopied(true)
+    }
+
+    const flashTimer = setTimeout(() => {
+      setCopied(false)
+    }, 3000)
+
+    return () => {
+      clearTimeout(flashTimer)
+    }
+  }, [copied])
+
   return (
     <div
       className={
@@ -9,7 +26,17 @@ export default function CodeBlock() {
       }
     >
       <span className={'absolute right-6 top-4 '}>
-        <DuplicateIcon className={'h-6 w-6'} />
+        {!copied && (
+          <DuplicateIcon
+            onClick={() => {
+              navigator.clipboard.writeText('Copy this text to clipboard')
+              setCopied(true)
+            }}
+            role={'button'}
+            className={'h-6 w-6'}
+          />
+        )}
+        {copied && <CheckCircleIcon className={'h-6 w-6 text-emerald-500'} />}
       </span>
       <Highlight className="php">{`// Before
 Http::withOptions([
