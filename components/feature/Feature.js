@@ -8,7 +8,11 @@ export default function Feature({ feature }) {
           'flex flex-col items-center justify-between space-y-4 text-center sm:flex-row sm:space-y-0'
         }
       >
-        <h2 className={'text-center text-2xl font-black md:text-left'}>
+        <h2
+          className={
+            'text-center text-2xl font-bold text-zinc-900 dark:text-white md:text-left'
+          }
+        >
           {feature.title}
         </h2>
         <span>
@@ -26,7 +30,7 @@ export default function Feature({ feature }) {
       </div>
       <p
         className={
-          'my-4 px-4 text-center text-zinc-900 dark:text-zinc-100 sm:px-0 sm:text-left'
+          'my-4 px-4 text-center text-zinc-600 dark:text-zinc-100 sm:px-0 sm:text-left'
         }
       >
         {feature.description}

@@ -8,7 +8,7 @@ export async function middleware(req) {
   }
 
   if (pathname === '/version') {
-    return NextResponse.redirect(APP.SITE_URL + '/version/9.19')
+    // return NextResponse.redirect(APP.SITE_URL + '/version/9.19')
   }
   return NextResponse.next()
 }
