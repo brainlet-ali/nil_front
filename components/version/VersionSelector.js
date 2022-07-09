@@ -16,13 +16,11 @@ export default function VersionSelector({
   loading,
 }) {
   const [versions, setVersions] = useState([
-    { id: 11, name: '9.19' },
-    { id: 1, name: '9.14' },
-    { id: 2, name: '9.13' },
-    { id: 3, name: '9.12' },
-    { id: 4, name: '9.11' },
-    { id: 5, name: '9.10' },
-    { id: 6, name: '9.9' },
+    { id: 1, name: '9.19' },
+    { id: 2, name: '9.18' },
+    { id: 3, name: '9.17' },
+    { id: 4, name: '9.16' },
+    { id: 5, name: '9.15' },
   ])
 
   const [selectedVersion, setSelectedVersion] = useState(
