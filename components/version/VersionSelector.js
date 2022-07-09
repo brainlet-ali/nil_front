@@ -13,6 +13,7 @@ export default function VersionSelector({
   version,
   onVersionChange,
   onFeaturesLoaded,
+  loading,
 }) {
   const [versions, setVersions] = useState([
     { id: 11, name: '9.19' },
@@ -44,7 +45,7 @@ export default function VersionSelector({
 
   return (
     <>
-      <VersionCircle versionName={selectedVersion.name} />
+      <VersionCircle loading={loading} versionName={selectedVersion.name} />
 
       <div className={'mx-auto mt-6 w-48'}>
         <Listbox value={selectedVersion} onChange={setSelectedVersion}>
