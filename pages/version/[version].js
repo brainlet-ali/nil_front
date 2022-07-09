@@ -18,48 +18,50 @@ export default function Index() {
   const { version } = router.query
 
   return (
-    <div>
-      <Head>
-        <title>
-          {APP.SITE_TITLE} {versionName ? `- V ${versionName}` : ''}
-        </title>
-        <meta name="description" content="What 's new in Laravel" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+      <div>
+        <Head>
+          <title>
+            {APP.SITE_TITLE} {versionName ? `- V ${versionName}` : ''}
+          </title>
+          <meta name="description" content="What 's new in Laravel" />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
 
-      <div className={'dark:bg-zinc-800'}>
-        <PageContainer>
-          <Header
-            onFeaturesLoaded={(features) => {
-              setFeatures(features)
-              setFeaturesLoading(false)
-            }}
-            onVersionChange={(name) => {
-              setVersionName(name)
-              setFeaturesLoading(true)
-            }}
-            version={version}
-          />
+        <div className={'dark:bg-zinc-800'}>
+          <PageContainer>
+            <Header
+              onFeaturesLoaded={(features) => {
+                setFeatures(features)
+                setFeaturesLoading(false)
+              }}
+              onVersionChange={(name) => {
+                setVersionName(name)
+                setFeaturesLoading(true)
+              }}
+              version={version}
+            />
 
-          <hr className={'my-20'} />
+            <hr className={'my-20'} />
 
-          <main>
-            <FeatureGrid>
-              {featuresLoading ? (
-                <FeatureLoading />
-              ) : (
-                features.map((feature) => {
-                  return (
-                    features.length > 0 && (
-                      <Feature key={feature.id} feature={feature} />
+            <main>
+              <FeatureGrid>
+                {featuresLoading ? (
+                  <FeatureLoading />
+                ) : (
+                  features.map((feature) => {
+                    return (
+                      features.length > 0 && (
+                        <Feature key={feature.id} feature={feature} />
+                      )
                     )
-                  )
-                })
-              )}
-            </FeatureGrid>
-          </main>
-        </PageContainer>
+                  })
+                )}
+              </FeatureGrid>
+            </main>
+          </PageContainer>
+        </div>
       </div>
-    </div>
+    </>
   )
 }

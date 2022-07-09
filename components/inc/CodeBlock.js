@@ -12,7 +12,7 @@ export default function CodeBlock({ code }) {
 
     const flashTimer = setTimeout(() => {
       setCopied(false)
-    }, 3000)
+    }, 1500)
 
     return () => {
       clearTimeout(flashTimer)
