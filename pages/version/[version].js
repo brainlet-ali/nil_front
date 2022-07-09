@@ -31,6 +31,7 @@ export default function Index() {
         <div className={'dark:bg-zinc-800'}>
           <PageContainer>
             <Header
+              featuredLoading={featuresLoading}
               onFeaturesLoaded={(features) => {
                 setFeatures(features)
                 setFeaturesLoading(false)
