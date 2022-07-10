@@ -8,7 +8,7 @@ export default function Nav() {
           About
         </a>
       </Link>
-      <Link href={'/google'}>
+      <Link href={'/'}>
         <a className={'tracking-widest text-brand hover:text-brand-700'}>Why</a>
       </Link>
     </nav>
