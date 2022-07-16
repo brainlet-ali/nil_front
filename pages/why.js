@@ -9,7 +9,7 @@ export default function Index() {
     <>
       <div>
         <Head>
-          <title>{APP.SITE_TITLE} - About</title>
+          <title>{APP.SITE_TITLE} - Why</title>
           <meta name="description" content="What 's new in Laravel" />
           <link rel="icon" href="/public/favicon.ico" />
         </Head>
@@ -24,7 +24,7 @@ export default function Index() {
               </div>
             </div>
 
-            <main>
+            <main className={'px-4 sm:px-0'}>
               <p className={'mx-auto mt-32 max-w-4xl text-center text-lg'}>
                 I don't know about you but I'm pretty slow when it comes to keep
                 up with all the new updates in Laravel framework. With new

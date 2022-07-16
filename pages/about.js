@@ -24,7 +24,7 @@ export default function Index() {
               </div>
             </div>
 
-            <main>
+            <main className={'px-4 sm:px-0'}>
               <p className={'mt-32 text-center text-lg'}>
                 I'm a Full Stack Web Developer.
               </p>
