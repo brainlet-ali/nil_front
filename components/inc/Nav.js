@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function Nav() {
   return (
     <nav className={'space-x-6'}>
-      <Link href={'/'}>
+      <Link href={'/version/9.19'}>
         <a className={'tracking-widest text-brand hover:text-brand-700'}>
           Home
         </a>
