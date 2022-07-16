@@ -15,13 +15,7 @@ export default function VersionSelector({
   onFeaturesLoaded,
   loading,
 }) {
-  const [versions, setVersions] = useState([
-    { id: 1, name: '9.19' },
-    { id: 2, name: '9.18' },
-    { id: 3, name: '9.17' },
-    { id: 4, name: '9.16' },
-    { id: 5, name: '9.15' },
-  ])
+  const [versions, setVersions] = useState([{ id: 1, name: '9.19' }])
 
   const [selectedVersion, setSelectedVersion] = useState(
     versions.find((v) => v.name === version) || versions[0]
