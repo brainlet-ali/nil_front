@@ -25,7 +25,7 @@ export default function CodeBlock({ code }) {
         'relative mt-2 max-w-7xl overflow-auto bg-brand-code_light px-10 py-2 shadow dark:bg-brand-code_dark sm:rounded-2xl'
       }
     >
-      <span className={'absolute right-6 top-4 '}>
+      <span className={'absolute right-6 top-4'}>
         {!copied && (
           <DuplicateIcon
             onClick={() => {
@@ -33,7 +33,9 @@ export default function CodeBlock({ code }) {
               setCopied(true)
             }}
             role={'button'}
-            className={'h-6 w-6'}
+            className={
+              'h-6 w-6 cursor-pointer text-gray-400 dark:text-gray-200'
+            }
           />
         )}
         {copied && <CheckCircleIcon className={'h-6 w-6 text-emerald-500'} />}
