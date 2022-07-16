@@ -11,7 +11,7 @@ const Header = ({
 }) => {
   return (
     <>
-      <div className={'mx-auto mb-10 w-2/4 sm:w-1/4'}>
+      <div className={'mx-auto mb-10 w-3/4 sm:w-1/4'}>
         <div className={'flex items-center justify-between'}>
           <Nav />
 
